@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summarization</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+</head>
+<body>
+    <!-- header section starts-->
+    <section class="header">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a href="{{ url_for('Home') }}">DocuSolutions</a>
+            </div>
+            <div class="navbar-nav">
+                <a href="{{ url_for('Home') }}">Home</a>
+                <a href="{{ url_for('Summarization') }}">Summarization</a>
+                <a href="{{ url_for('Similarity') }}">Similarity</a>
+                <a href="{{ url_for('About') }}">About</a>
+            </div>
+            <div class="navbar-sign">
+                <a href="{{ url_for('signIn') }}" class="signIn">Sign in</a>
+                <a href="{{ url_for('signUp') }}" class="signup">Sign Up</a>
+            </div>
+        </nav>
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </section>
+    <!-- Header section ends-->
+
+    <div id="container">
+        <div id="sidebar">
+            <!-- Sidebar content here -->
+            <a href="{{ url_for('Summarization') }}" class="button">Summarize Text</a>
+            <a href="{{ url_for('Similarity') }}" class="button">Check Similarity</a>
+            <a href="{{ url_for('PP') }}" class="button">Privacy Policy</a>
+            <a href="{{ url_for('Home') }}" class="button">FAQ's</a>
+            <!-- Add other buttons and sections -->
+        </div>
+        <div id="mainContent">
+            <h1>Text Summarizer</h1>
+            <div class="flex-container">
+                <div class="input-section">
+                    <h2>Input File</h2>
+                    <p>Insert text to summarize or upload a file</p>
+                    <div class="upload-area">
+                        <p>Browse pdf, txt, docx, files here</p>
+                        <!-- This is the input field that will trigger the file dialog -->
+                        <input type="file" id="file-input" style="display: none;" />
+
+                        <!-- This is a label that is styled like a button, which links to the input field -->
+                        <label for="file-input" class="file-upload-button">Upload a File</label>
+                        <br>
+                        <textarea id="text-input" placeholder="Insert text to summarize or upload a file"></textarea>
+                        <div id="file-info"></div>
+                    </div>
+                </div>
+                <div class="output-section">
+                    <h2>Output</h2>
+                    <div id="loading" style="display:none;">
+                        <i class="fa fa-spinner fa-spin"></i> Loading...
+                    </div>
+                    <p id="output-content"></p>
+                </div>
+            </div>
+            <button id="checkNow">Summarize</button>
+        </div>
+    </div>
+           
+    <div id="box-container">
+        <h3>How to Summarize Text Using this Tool?</h3><br>
+        <div id="grid-container">
+
+            <div class="box">
+                <div class="image">
+                    <i class="fa-solid fa-upload"></i>
+                </div>
+                <div class="content">
+                    <h3>Click on the upload button. The system opens a dialog box for file selection, from where you can upload a document of pdf, text or docx format.  </h3>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <i class="fa-solid fa-file-import"></i>
+                </div>
+                <div class="content">
+                    <h3>Select and import the document that you want to summarize. </h3>
+                </div>
+            </div>
+        
+            <div class="box">
+                <div class="image">
+                    <i class="fa-solid fa-arrow-pointer"></i>
+                </div>
+                <div class="content">
+                    <h3>Once the document is uploaded, click the summarize button. </h3>
+                </div>
+            </div>
+            
+            <div class="box">
+                <div class="image">
+                    <i class="fa-solid fa-list"></i>
+                </div>
+                <div class="content">
+                    <h3>The application processes the uploaded document for summary generation and you will get the summary in seconds!</h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="box-container">
+        <h3>What can you do with this Summarizing Tool?</h3><br>
+        <div class="section-content">
+        <ul>
+            <li>Revamp lengthy content into captivating and approachable text
+                Easily transform your paragraphs and articles into digestible summaries and bullet points..</li>
+            <li>Identify the main points and ideas in your copy in one click
+                Count on robust AI to extract crucial concepts while removing unnecessary text.</li>
+            <li>Create more quality copy with ease and in less time
+                Save hours of work—the tool will quickly summarize any text or article for you.</li>
+        </ul>
+        <div class="image-container">
+            <img src="https://miro.medium.com/v2/resize:fit:612/1*gYVZCuL7dz8ALoyp7Gob_A.png" />
+        </div>
+        </div>
+    </div>
+
+<!-- Footer Section starts-->
+<section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>Quick Links</h3>
+            <a href="{{ url_for('Home') }}"><i class="fas fa-angle-right"></i>Home</a>
+            <a href="{{ url_for('Summarization') }}"><i class="fas fa-angle-right"></i>Summarization</a>
+            <a href="{{ url_for('Similarity') }}"><i class="fas fa-angle-right"></i>Similarity</a>
+            <a href="{{ url_for('About') }}"><i class="fas fa-angle-right"></i>About</a>
+        </div>
+
+        <div class="box">
+            <h3>Extra Links</h3>
+            <a href="{{url_for('About')}}"><i class="fas fa-angle-right"></i>Ask Questions</a>
+            <a href="{{ url_for('About') }}"><i class="fas fa-angle-right"></i>About us</a>
+            <a href="{{ url_for('PP') }}"><i class="fas fa-angle-right"></i>Privacy Policy</a>
+            <a href="{{ url_for('PP') }}"><i class="fas fa-angle-right"></i>Terms of use</a>
+        </div>
+
+        <div class="box">
+            <h3>Contact Info</h3>
+            <a href="#"><i class="fas fa-envelope"></i>zaf7602@gmail.com</a>
+            <a href="https://www.linkedin.com/in/ayesha-moazzam-256a54244/"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/AyeshaMoazzam02"><i class="fa-brands fa-github"></i>Github</a>
+            <a href="#"><i class="fas fa-map"></i>Islamabad, Pakistan, 45710</a>
+        </div>
+    </div>
+    <div class="credit">created by <span> 20-SE-32, 36, 78</span> | all rights reserved!</div>
+</section>
+
+<!-- Footer Section ends-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+<script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+
+<script>
+     document.querySelector('.file-upload-button').addEventListener('click', function() {
+        fileInput.click();
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+    const fileInput = document.getElementById('file-input');
+    const textOutput = document.getElementById('text-input');
+    const fileInfo = document.getElementById('file-info');
+    const outputContent = document.getElementById('output-content');
+
+    fileInput.addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        fileInfo.textContent = 'Uploaded: ' + file.name;
+        if (file) {
+            if (file.name.endsWith('.docx')) {
+                readDocxFile(file);
+            } else if (file.name.endsWith('.pdf')) {
+                readPdfFile(file);
+            } else if (file.name.endsWith('.txt')) {
+                readTextFile(file);
+            } else {
+                alert('Unsupported file type!');
+            }
+        }
+    });
+
+    function readTextFile(file) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            textOutput.value = e.target.result;
+        };
+        reader.readAsText(file);
+    }
+
+    function readDocxFile(file) {
+        var reader = new FileReader();
+        reader.onload = function(event) {
+            var arrayBuffer = event.target.result;
+            mammoth.extractRawText({arrayBuffer: arrayBuffer})
+                .then(function(result) {
+                    textOutput.value = result.value;
+                })
+                .catch(function(err) {
+                    console.log(err);
+                });
+        };
+        reader.readAsArrayBuffer(file);
+    }
+
+    function readPdfFile(file) {
+        var fileReader = new FileReader();
+        fileReader.onload = function() {
+            var typedarray = new Uint8Array(this.result);
+            var loadingTask = pdfjsLib.getDocument({data: typedarray});
+            loadingTask.promise.then(function(pdf) {
+                console.log('PDF loaded');
+                var numPages = pdf.numPages;
+                var fullText = '';
+                function getNextPageText(pageNumber) {
+                    pdf.getPage(pageNumber).then(function(page) {
+                        console.log('Page ' + pageNumber + ' loaded');
+                        page.getTextContent().then(function(textContent) {
+                            var pageText = textContent.items.map(item => item.str).join(' ');
+                            fullText += pageText + ' ';
+                            if (pageNumber < numPages) {
+                                getNextPageText(pageNumber + 1);
+                            } else {
+                                textOutput.value = fullText;
+                            }
+                        });
+                    });
+                }
+                getNextPageText(1);
+            }, function(reason) {
+                console.error('Error: ' + reason);
+            });
+        };
+        fileReader.readAsArrayBuffer(file);
+    }
+
+    document.getElementById('checkNow').addEventListener('click', function() {
+        var text = textOutput.value;
+        if (text) {
+            document.getElementById('loading').style.display = 'block';
+            outputContent.textContent = '';
+            fetch('/summarize', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({text: text})
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('loading').style.display = 'none';
+                if(data.error) {
+                    alert(data.error);
+                } else {
+                    outputContent.textContent = data.summary;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('loading'). style.display = 'none';
+            });
+        } else {
+            outputContent.textContent = 'Please enter text or upload a file.';
+        }
+    });
+});
+
+</script>  
+</body>
+</html>

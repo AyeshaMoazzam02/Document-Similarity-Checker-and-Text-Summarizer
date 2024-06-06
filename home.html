@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+</head>
+<body>
+    <!-- header section starts-->
+    <section class="header">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a href="{{ url_for('Home') }}">DocuSolutions</a>
+            </div>
+            <div class="navbar-nav">
+                <a href="{{ url_for('Home') }}">Home</a>
+                <a href="{{ url_for('Summarization') }}">Summarization</a>
+                <a href="{{ url_for('Similarity') }}">Similarity</a>
+                <a href="{{ url_for('About') }}">About</a>
+            </div>
+            <div class="navbar-sign">
+                <a href="{{ url_for('signIn') }}" class="signIn">Sign in</a>
+                <a href="{{ url_for('signUp') }}" class="signup">Sign Up</a>
+            </div>
+        </nav>
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </section>
+    <!-- Header section ends-->
+
+     <!-- Home section starts-->
+
+     <section class="home">
+        <div class="swiper home-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slide" style="background: url(https://flowdog.io/wp-content/uploads/2021/11/System-DMS.png) no-repeat;">
+                    <div class="content">  
+                        <h3>Summarize any Document</h3>
+                        <span>DocuSolutions helps you summarize any piece of text into concise, easy to digest content so you can free yourself from information overload.</span>
+                        <a href="{{ url_for('Summarization') }}" class="btn">Summarize Now</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide" style="background: url(https://flowdog.io/wp-content/uploads/2021/11/System-DMS.png) no-repeat;">
+                    <div class="content">
+                        <h3>Check Similarity Between Documents</h3>
+                        <span>You can now compare two or more text documents using this application.</span>
+                        <a href="{{ url_for('Similarity') }}" class="btn">Check Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+    
+    <!-- Home section ends-->
+ 
+    <!--Servics Section starts-->
+    <section class="services">
+        <h1 class="heading-title">Handle Large Documents easily using this free Tool</h1>
+        <div class="box-container">
+
+            <div class="box">
+                <i class="fa-solid fa-building-columns"></i>
+                <h3>Academic Research</h3>
+                <p>Speed up your academic research by extracting key points.</p>
+            </div>
+
+            <div class="box">
+                <i class="fa-regular fa-user"></i>
+                <h3>Every day Use</h3>
+                <p>Reduce your reading time by summarizing long blocks of text within seconds.</p>
+            </div>
+        
+            <div class="box">
+                <i class="fa-solid fa-business-time"></i>
+                <h3>Business</h3>
+                <p>Easily condense transcripts of long meetings into concise bullet points.</p>
+            </div>
+            
+            <div class="box">
+                <i class="fa-regular fa-folder"></i>
+                <h3>Difficult Text</h3>
+                <p>Simplify hard-to-read paragraphs, sentences or complete articles with 1 click.</p>
+            </div>
+        </div>
+    </section>
+
+    <!--Servics Section ends-->
+
+    <!--features Section start--> 
+    <section class="features">\
+        <h1 class="heading-title">Why use this tool?</h1>
+        <div class="features-content">
+          <ul class="benefits-list">
+            <li><span class="checkmark">✔</span> <span style=" font-weight: 900;">100% free: </span>Generate unlimited summaries without paying a penny</li>
+            <li><span class="checkmark">✔</span> <span style=" font-weight: 900;">Accurate:</span> Get a reliable and trustworthy summary of your original text without any errors</li>
+            <li><span class="checkmark">✔</span> <span style=" font-weight: 900;">Secure: </span>No summary data is stored, guaranteeing your privacy</li>
+            <li><span class="checkmark">✔</span> <span style=" font-weight: 900;">Speed: </span>Get an results within seconds, thanks to AI</li>
+            <li><span class="checkmark">✔</span> <span style=" font-weight: 900;">User Friendly: </span>Users from various backgrounds can easily use this application</li>
+          </ul>
+          <div class="image-container">
+            <img src="https://www.hybridlynx.com/wp-content/uploads/2021/05/text_summarization-icon-600x600-1.png">
+          </div>
+        </div>  s
+      </section>
+    <!--features Section end-->
+
+    <!--Contact section start-->
+    <section class="contact-section" id="contact-section">
+        <h1 class="heading-title">Questions?</h1>
+        <div class="contact-content">
+            <div class="contact-area">
+                <h2>Ask our team</h2>
+                <p>Want to contact us directly? No problem. We are always here for you.</p>
+                <ul class="contact-options">
+                    <li><i class="fa-solid fa-envelope"></i><a href="mailto:zaf7620@gmail.com">Email zaf7620@gmail.com</a></li>
+                    <li><i class="fa-brands fa-linkedin"></i><a href="https://www.linkedin.com/in/ayesha-moazzam-256a54244/"> LinkedIn</a></li>
+                    <li><i class="fa-brands fa-github"></i><a href="https://github.com/AyeshaMoazzam02">Github</a></li>
+                </ul>
+            </div>
+            <div class="faq-area">
+                <h2>Frequently asked questions</h2>
+                <div class="faq-list">
+                    <div class="question">
+                        <p><strong>1. </strong> Why use this summary generator?</p>
+                        <div class="answer">
+                            <p>Our tool is fast, accurate, and completely free. It saves you time and effort by providing you with a quick and concise summary of your text. Whether you need to summarize an article, a report, or a paragraph, we’ve got you covered.</p>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <p><strong>2. </strong> How does the Summary Generator work?</p>
+                        <div class="answer">
+                            <p>Our text summarizer tool is powered by AI. It uses advanced algorithms to analyze your text and extract the most relevant information. It’s easy to use: simply paste your text into the input box, click the "Summarize" button, and our tool will do the rest</p>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <p><strong>3. </strong> How much does it cost?</p>
+                        <div class="answer">
+                            <p>The Summary Generator tool is free to use, with no limits. Rework as many texts as you want, and share them with your teammates and writers.</p>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <p><strong>4. </strong>Who owns the summarized text?</p>
+                        <div class="answer">
+                            <p>You do! You’re free to use any summary you generate in your own work.</p>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <p><strong>5. </strong> What languages are supported?</p>
+                        <div class="answer">
+                            <p>Currently, the AI Summary Generator is available in English. However, more languages are coming—stay tuned!</p>
+                        </div>
+                    </div>
+                    <div class="question last-qs">
+                        <p><strong>6. </strong> Can the tool be used on mobile devices?</p>
+                        <div class="answer">
+                            <p>The text summarizer is accessible on both desktop and mobile.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact section end-->
+
+   <!-- Footer Section starts-->
+   <section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>Quick Links</h3>
+            <a href="{{ url_for('Home') }}"><i class="fas fa-angle-right"></i>Home</a>
+            <a href="{{ url_for('Summarization') }}"><i class="fas fa-angle-right"></i>Summarization</a>
+            <a href="{{ url_for('Similarity') }}"><i class="fas fa-angle-right"></i>Similarity</a>
+            <a href="{{ url_for('About') }}"><i class="fas fa-angle-right"></i>About</a>
+        </div>
+
+        <div class="box">
+            <h3>Extra Links</h3>
+            <a href="#contact-section"><i class="fas fa-angle-right"></i>Ask Questions</a>
+            <a href="{{ url_for('About') }}"><i class="fas fa-angle-right"></i>About us</a>
+            <a href="{{ url_for('PP') }}"><i class="fas fa-angle-right"></i>Privacy Policy</a>
+            <a href="{{ url_for('PP') }}"><i class="fas fa-angle-right"></i>Terms of use</a>
+        </div>
+
+        <div class="box">
+            <h3>Contact Info</h3>
+            <a href="#"><i class="fas fa-envelope"></i>zaf7602@gmail.com</a>
+            <a href="https://www.linkedin.com/in/ayesha-moazzam-256a54244/"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/AyeshaMoazzam02"><i class="fa-brands fa-github"></i>Github</a>
+            <a href="#"><i class="fas fa-map"></i>Islamabad, Pakistan, 45710</a>
+        </div>
+    </div>
+    <div class="credit">created by <span> 20-SE-32, 36, 78</span> | all rights reserved!</div>
+</section>
+
+<!-- Footer Section ends-->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+   var swiper = new Swiper(".home-slider", {
+        loop:true,
+        navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+        },
+        });
+
+        document.querySelectorAll('.question p').forEach(function(question) {
+        question.addEventListener('click', function() {
+            var answer = this.nextElementSibling;
+            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+</script>
+</body>
+</html>

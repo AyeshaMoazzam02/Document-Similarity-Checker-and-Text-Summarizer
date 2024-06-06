@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+</head>
+<body>
+    <!-- header section starts-->
+    <section class="header">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <a href="{{ url_for('Home') }}">DocuSolutions</a>
+            </div>
+            <div class="navbar-nav">
+                <a href="{{ url_for('Home') }}">Home</a>
+                <a href="{{ url_for('Summarization') }}">Summarization</a>
+                <a href="{{ url_for('Similarity') }}">Similarity</a>
+                <a href="{{ url_for('About') }}">About</a>
+            </div>
+            <div class="navbar-sign">
+                <a href="{{ url_for('signIn') }}" class="signIn">Sign in</a>
+                <a href="{{ url_for('signUp') }}" class="signup">Sign Up</a>
+            </div>
+        </nav>
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </section>
+    <!-- Header section ends-->
+
+    <div id="about">
+        <h1 class="heading">About Us</h1>
+        <h2>Project Introduction</h2><br>
+        <p>Welcome to our website, designed as a comprehensive tool for both text summarization and document similarity checking. These features are crafted to be user-friendly and intuitive, making complex tasks accessible to users from various backgrounds, including students, academics, and professionals.</p>
+        <h2>Purpose and Inspiration</h2><br>
+        <p>This project was developed as a culminating effort for our Bachelor's degree, serving as our final year project. We aimed to create a reliable and efficient platform to help users manage and understand large volumes of text quickly, which is often a necessity in academic and professional settings.</p>
+        <h2>Technological Details</h2><br>
+        <p>Our platform utilizes advanced natural language processing techniques. For text summarization, we have integrated the PEGASUS model, which is renowned for its ability to generate concise and coherent summaries. The document similarity checker is powered by cosine similarity, an algorithm that measures the cosine of the angle between two vectors to determine how similar two documents are. This combination of technologies ensures accuracy and effectiveness.</p>
+        <h2>Team Introduction</h2><br>
+        <p>Our team consists of three dedicated members who have collaborated closely to bring this project to fruition. Each member brought unique skills and insights, contributing to the robust functionality and user-friendly design of our website.</p>
+        <h2>Development Journey</h2><br>
+        <p>The journey of this project began in September 2023 and reached completion in May 2024. Throughout these months, we tackled numerous challenges, from refining the algorithms to enhancing the user interface. Our commitment to creating a top-quality tool was driven by a continuous cycle of feedback and iterations, ensuring that the final product met our high standards.</p>
+        <h2>Future Enhancements</h2><br>
+        <p>Looking ahead, we are excited about the potential to expand our website's capabilities. The application will also expand to support more document formats like PowerPoint, Excel, and CSV files, integrating additional libraries for broader compatibility. Additionally, improvements will ensure full responsiveness across various devices and operating systems.</p>
+        <h2>Contact Information</h2><br>
+        <p>We value your feedback and suggestions. If you have any questions or would like to contact us, please feel free to reach out through our provided contact methods.
+        <ul class="contact-options">
+            <li><i class="fa-solid fa-envelope"></i><a href="mailto:zaf7620@gmail.com">&nbsp&nbsp Email zaf7620@gmail.com</a></li>
+            <li><i class="fa-brands fa-linkedin"></i><a href="https://www.linkedin.com/in/ayesha-moazzam-256a54244/">&nbsp&nbsp LinkedIn</a></li>
+            <li><i class="fa-brands fa-github"></i><a href="https://github.com/AyeshaMoazzam02">&nbsp&nbsp Github</a></li>
+        </ul></p>
+        <h2>Acknowledgements</h2><br>
+        <p>We would like to express our gratitude to our university faculty and mentors, whose guidance was indispensable throughout the development of this project. Their expertise and support have been pivotal in our learning and project success.</p>
+    </div>
+
+   <!-- Footer Section starts-->
+   <section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>Quick Links</h3>
+            <a href="{{ url_for('Home') }}"><i class="fas fa-angle-right"></i>Home</a>
+            <a href="{{ url_for('Summarization') }}"><i class="fas fa-angle-right"></i>Summarization</a>
+            <a href="{{ url_for('Similarity') }}"><i class="fas fa-angle-right"></i>Similarity</a>
+            <a href="{{ url_for('About') }}"><i class="fas fa-angle-right"></i>About</a>
+        </div>
+
+        <div class="box">
+            <h3>Extra Links</h3>
+            <a href=".contact-section"><i class="fas fa-angle-right"></i>Ask Questions</a>
+            <a href="{{ url_for('About') }}"><i class="fas fa-angle-right"></i>About us</a>
+            <a href="{{ url_for('PP') }}"><i class="fas fa-angle-right"></i>Privacy Policy</a>
+            <a href="{{ url_for('About') }}"><i class="fas fa-angle-right"></i>Terms of use</a>
+        </div>
+
+        <div class="box">
+            <h3>Contact Info</h3>
+            <a href="#"><i class="fas fa-envelope"></i>zaf7602@gmail.com</a>
+            <a href="https://www.linkedin.com/in/ayesha-moazzam-256a54244/"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/AyeshaMoazzam02"><i class="fa-brands fa-github"></i>Github</a>
+            <a href="#"><i class="fas fa-map"></i>Islamabad, Pakistan, 45710</a>
+        </div>
+    </div>
+    <div class="credit">created by <span> 20-SE-32, 36, 78</span> | all rights reserved!</div>
+</section>
+
+<!-- Footer Section ends-->
+
+<script>
+  
+</script>
+</body>
+</html>
